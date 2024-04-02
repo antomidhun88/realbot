@@ -3,7 +3,6 @@ import mysql.connector
 from mysql.connector import Error
 import numpy as np
 from openai import OpenAI
-import creds
 import os
 from dotenv import load_dotenv, dotenv_values
 
