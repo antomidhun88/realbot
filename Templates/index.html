@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #3498db, #2c3e50); /* Gradient background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #login-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #sign-up-link {
+            color: #3498db;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        #sign-up-link:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-container">
+        <h1>Mental Health Bot</h1>
+        <h2>Login</h2>
+        {% if error_message %}
+            <p style="color : red;">{{error_message}}</p>
+            {% endif %}
+        <form action="#" method="post"> 
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password (min. 6 characters)" minlength="6" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>
+            Don't have an account? 
+            <a href="{{url_for('signup')}}">Sign Up</a>
+        </p>
+    </div>
+</body>
+</html>
